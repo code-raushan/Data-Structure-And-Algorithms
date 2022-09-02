@@ -2,13 +2,17 @@ package StacksAndQueues;
 //Stack is a data structure that follow the concept of LIFO- Last In First Out and FILO- First In Last Out
 //Applications in parenthesis validation, systematic memory management, backtracking etc.
 
+
+//Implementation
+
+//creating a stack class
 class MyStack{
-	int Stk[];
-	int top;
-	int size;
+	int Stk[]; //initializing a stack arr
+	int top; // top index
+	int size; //size of the stack array
 	//constructor creation
 	MyStack(int s){
-		Stk = new int[s];
+		Stk = new int[s]; //initializing the stack array
 		size = s;
 		top = -1;
 		
