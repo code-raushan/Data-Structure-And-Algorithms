@@ -1,6 +1,6 @@
 package StacksAndQueues;
 import java.util.Scanner;
-import java.util.Stack;
+import java.util.Stack; //Stack
 
 
 //push opening brackets and pop top item if same closing bracket occurs
@@ -42,6 +42,7 @@ public class Parenthesis_check {
 		}
 
 	}
+	//function to check if closing parenthesis match the correspoding opening parenthesis
 	public static boolean handleClosing(Stack<Character> st, char correspondingOpCh) {
 		if(st.size()==0) {
 			return false;
