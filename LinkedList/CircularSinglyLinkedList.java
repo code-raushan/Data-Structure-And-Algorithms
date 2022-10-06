@@ -43,6 +43,33 @@ public class CircularSinglyLinkedList {
 		last.next = temp;
 		length++;
 	}
+	public void insertLast(int value) {
+		ListNode temp = new ListNode(value);
+		if(last == null) {
+			last = temp;
+			last.next = last;
+		}else {
+			temp.next = last.next;
+			last.next = temp;
+			last = temp;
+		}
+		length++;
+	}
+	public ListNode removeFirst() {
+		if(isEmpty()) {
+			System.out.println("List is empty");
+			return null;
+		}
+		ListNode temp = last.next;
+		if(last.next==last) {
+			last = null;
+		}else {
+			last.next = temp.next;
+		}
+		temp.next = null;//breaking the chain;
+		length--;
+		return temp;
+	}
 	
 	//for demonstration purpose
 	public void createInstance() {
