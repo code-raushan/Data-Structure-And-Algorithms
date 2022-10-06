@@ -51,7 +51,38 @@ public class DoublyLinkedList {
 		tail = newNode;
 		length++;
 	}
-	
+	public ListNode deleteFirst() {
+		if(isEmpty()) {
+			System.out.println("List is empty"); 
+			return null;
+		}
+		ListNode temp = head;
+		if(head == tail) {
+			tail = null;
+		}else {
+			head.next.previous = null;//breaking the link
+		}
+		head = head.next;
+		temp.next = null;
+		length--;
+		return temp;//returning the deleted node;
+	}
+	public ListNode deleteLast() {
+		if(isEmpty()) {
+			System.out.println("List is empty");
+			return null;
+		}
+		ListNode temp = tail;
+		if(head==tail) {
+			head = null;
+		}else {
+			tail.previous.next = null;
+		}
+		tail = tail.previous;//shifted the tail pointer
+		temp.previous = null;
+		length--;
+		return temp; //returned the deleted node;
+	}
 	
 	
 	public void displayForward() {
